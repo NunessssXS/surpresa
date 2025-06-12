@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vinda</title>
+    <title>Surpresa Especial</title>
     <link rel="stylesheet" href="style.css"> <!-- Seu arquivo CSS -->
 </head>
 <body>
-    <div class="container">
+    <div id="pagina1" class="pagina">
         <h1>Bem-vinda!</h1>
-        <p>Por favor, preencha os campos abaixo:</p>
-
-        <form id="loginForm">
-            <label for="nome">Nome Completo:</label>
+        <p>Por favor, digite seu nome completo:</p>
+        <form id="formNome">
             <input type="text" id="nome" placeholder="Digite seu nome">
-            <button type="button" class="btn" onclick="mostrarMensagem()">Enviar</button>
+            <button type="button" class="btn" onclick="proximaPagina()">Enviar</button>
         </form>
+    </div>
 
-        <div id="mensagem" style="display:none;">
-            <h2>Bom, este é seu nome:</h2>
-            <p id="nomeApresentacao"></p>
-            <p id="mensagemPersonalizada"></p>
-        </div>
+    <div id="pagina2" class="pagina" style="display: none;">
+        <h1>Você é especial!</h1>
+        <p>Te amo, você é meu mundo.</p>
+        <button type="button" class="btn" onclick="mostrarOpcoes()">Continuar</button>
+    </div>
 
-        <div id="opcoes" style="display:none;">
-            <label for="opcao">Escolha uma opção:</label>
-            <select id="opcao">
-                <option value="linda">Linda</option>
-                <option value="maravilhosa">Maravilhosa</option>
-                <option value="inteligente">Inteligente</option>
-            </select>
-            <button type="button" class="btn" onclick="mostrarOpcao()">Enviar</button>
-        </div>
+    <div id="pagina3" class="pagina" style="display: none;">
+        <h1>Escolha algo para dizer:</h1>
+        <input type="text" id="mensagem" placeholder="Escreva algo...">
+        <button type="button" class="btn" onclick="mostrarMensagem()">Enviar</button>
+    </div>
+
+    <div id="mensagemPersonalizada" class="pagina" style="display: none;">
+        <h2 id="mensagemTexto"></h2>
+        <button type="button" class="btn" onclick="reiniciar()">Recomeçar</button>
     </div>
 
     <script src="script.js"></script> <!-- Seu arquivo JS -->

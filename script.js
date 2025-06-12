@@ -1,30 +1,37 @@
-function mostrarMensagem() {
-    var nome = document.getElementById('nome').value;
+function proximaPagina() {
+    const nome = document.getElementById('nome').value;
     if (nome.trim() !== "") {
-        // Exibe a mensagem de boas-vindas
-        document.getElementById('nomeApresentacao').textContent = nome;
-
-        // Mostra o próximo formulário
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('mensagem').style.display = 'block';
-        document.getElementById('opcoes').style.display = 'block';
+        // Exibe a próxima página com a mensagem "Você é especial!"
+        document.getElementById('pagina1').style.display = 'none';
+        document.getElementById('pagina2').style.display = 'block';
     } else {
         alert("Por favor, insira seu nome.");
     }
 }
 
-function mostrarOpcao() {
-    var opcaoSelecionada = document.getElementById('opcao').value;
-    var mensagemPersonalizada = '';
+function mostrarOpcoes() {
+    document.getElementById('pagina2').style.display = 'none';
+    document.getElementById('pagina3').style.display = 'block';
+}
 
-    // Definindo a mensagem com base na opção escolhida
-    if (opcaoSelecionada === 'linda') {
-        mensagemPersonalizada = 'Você é realmente linda!';
-    } else if (opcaoSelecionada === 'maravilhosa') {
-        mensagemPersonalizada = 'Você é maravilhosa!';
-    } else if (opcaoSelecionada === 'inteligente') {
-        mensagemPersonalizada = 'Você é muito inteligente!';
+function mostrarMensagem() {
+    const mensagem = document.getElementById('mensagem').value.toLowerCase();
+
+    if (mensagem === "linda") {
+        document.getElementById('mensagemTexto').textContent = "Você é linda! Sempre será!";
+    } else if (mensagem === "maravilhosa") {
+        document.getElementById('mensagemTexto').textContent = "Você é maravilhosa! Meu amor por você é infinito!";
+    } else {
+        document.getElementById('mensagemTexto').textContent = "Te amo muito! E sempre vou te amar!";
     }
 
-    document.getElementById('mensagemPersonalizada').textContent = mensagemPersonalizada;
+    // Exibe a mensagem personalizada
+    document.getElementById('pagina3').style.display = 'none';
+    document.getElementById('mensagemPersonalizada').style.display = 'block';
+}
+
+function reiniciar() {
+    document.getElementById('mensagemPersonalizada').style.display = 'none';
+    document.getElementById('pagina1').style.display = 'block';
+    document.getElementById('nome').value = ''; // Limpa o campo de nome
 }

@@ -1,8 +1,8 @@
 :root {
-    --cor-fundo: #f0f0f0; /* Fundo da página */
-    --cor-principal: #1E90FF; /* Cor principal */
-    --cor-secundaria: #FF6347; /* Cor secundária */
-    --cor-texto: #333333; /* Cor do texto */
+    --cor-fundo: #ff4d4d; /* Fundo vermelho mais suave */
+    --cor-principal: #1E90FF; /* Azul para botões */
+    --cor-texto: #333333;
+    --cor-texto-destaque: #FFFFFF; /* Cor de texto para o fundo vermelho */
 }
 
 body {
@@ -14,9 +14,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    flex-direction: column;
 }
 
-.container {
+.pagina {
     text-align: center;
     padding: 20px;
     background-color: white;
@@ -30,7 +31,16 @@ h1, h2 {
     color: var(--cor-principal);
 }
 
-.btn {
+input {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+
+button {
     background-color: var(--cor-principal);
     color: white;
     padding: 10px 20px;
@@ -40,17 +50,8 @@ h1, h2 {
     margin-top: 10px;
 }
 
-.btn:hover {
-    background-color: var(--cor-secundaria);
-}
-
-input, select {
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
+button:hover {
+    background-color: var(--cor-texto);
 }
 
 form {
