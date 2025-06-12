@@ -1,15 +1,30 @@
-document.getElementById('startButton').addEventListener('click', function() {
-  document.getElementById('intro').classList.add('hidden');
-  document.getElementById('challenge').classList.remove('hidden');
-});
+function mostrarMensagem() {
+    var nome = document.getElementById('nome').value;
+    if (nome.trim() !== "") {
+        // Exibe a mensagem de boas-vindas
+        document.getElementById('nomeApresentacao').textContent = nome;
 
-document.getElementById('submitAnswer').addEventListener('click', function() {
-  var answer = document.getElementById('answer').value;
-  if (answer) {
-    document.getElementById('challenge').classList.add('hidden');
-    document.getElementById('response').classList.remove('hidden');
-    document.getElementById('surpriseText').textContent = `A sua resposta: "${answer}" me faz pensar em todos os momentos incríveis que já passamos juntos. Mal posso esperar para criar mais memórias com você!`;
-  } else {
-    alert('Por favor, insira uma resposta!');
-  }
-});
+        // Mostra o próximo formulário
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('mensagem').style.display = 'block';
+        document.getElementById('opcoes').style.display = 'block';
+    } else {
+        alert("Por favor, insira seu nome.");
+    }
+}
+
+function mostrarOpcao() {
+    var opcaoSelecionada = document.getElementById('opcao').value;
+    var mensagemPersonalizada = '';
+
+    // Definindo a mensagem com base na opção escolhida
+    if (opcaoSelecionada === 'linda') {
+        mensagemPersonalizada = 'Você é realmente linda!';
+    } else if (opcaoSelecionada === 'maravilhosa') {
+        mensagemPersonalizada = 'Você é maravilhosa!';
+    } else if (opcaoSelecionada === 'inteligente') {
+        mensagemPersonalizada = 'Você é muito inteligente!';
+    }
+
+    document.getElementById('mensagemPersonalizada').textContent = mensagemPersonalizada;
+}
