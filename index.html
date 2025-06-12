@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surpresa Especial</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Tela Inicial -->
+  <div id="intro">
+    <h1>Bem-vinda à nossa surpresa!</h1>
+    <p>Apesar da distância, tenho algo especial preparado para você.</p>
+    <button id="startButton">Clique para começar</button>
+  </div>
+
+  <!-- Página do Desafio -->
+  <div id="challenge" class="hidden">
+    <h2>Desafio do Coração</h2>
+    <p>Qual foi o momento mais especial que passamos juntos?</p>
+    <input type="text" id="answer" placeholder="Digite sua resposta...">
+    <button id="submitAnswer">Enviar Resposta</button>
+  </div>
+
+  <!-- Resposta Surpresa -->
+  <div id="response" class="hidden">
+    <h2>Resposta Surpresa!</h2>
+    <p id="surpriseText"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
